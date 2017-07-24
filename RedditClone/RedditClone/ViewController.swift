@@ -19,12 +19,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         topicsTableView?.register(UINib(nibName: "TopicTableViewCell", bundle: nil), forCellReuseIdentifier: "TopicTableViewCell")
         topicsTableView?.register(UINib(nibName: "SubmitTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "SubmitTopicTableViewCell")
-        
-        // For testing purposes only
-        for topicNumber in 1...20 {
-            let topic: Topic = Topic(topicName: "Topic \(topicNumber)", count: 0)
-            topicsList.append(topic)
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,13 +59,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // SubmitTopicTableViewCellDelegate
     func addNewTopic(topic: String?) {
-        guard let topic = topic else {
+        guard let topic = topic, topic.characters.count > 0 else {
+            showOKAlert(title: "Sorry!", message: "You cannot add an empty topic.")
+            return
+        }
+        
+        if topicsList.count >= 20 {
+            showOKAlert(title: "Oops!", message: "The maximum number of topics has been reached. You cannot add more.")
             return
         }
         
         let newTopic: Topic = Topic(topicName: topic, count: 0)
         topicsList.append(newTopic)
         topicsTableView?.reloadData()
+    }
+    
+    func showOKAlert(title: String?, message: String?) {
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+
     }
 }
 
