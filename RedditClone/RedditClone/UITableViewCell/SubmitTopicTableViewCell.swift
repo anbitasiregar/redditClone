@@ -23,6 +23,7 @@ class SubmitTopicTableViewCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         topicTextField?.delegate = self
+        submitButton?.layer.cornerRadius = 4
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

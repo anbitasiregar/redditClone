@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         topicsTableView?.register(UINib(nibName: topicTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: topicTableViewCellIdentifier)
         topicsTableView?.register(UINib(nibName: submitTopicTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: submitTopicTableViewCellIdentifier)
         topicsTableView?.rowHeight = UITableViewAutomaticDimension
-        topicsTableView?.estimatedRowHeight = 44
+        topicsTableView?.estimatedRowHeight = 77
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
