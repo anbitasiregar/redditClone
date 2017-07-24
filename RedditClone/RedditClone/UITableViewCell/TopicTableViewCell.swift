@@ -15,7 +15,16 @@ class TopicTableViewCell: UITableViewCell {
     @IBOutlet weak var upvoteButton: UIButton?
     @IBOutlet weak var downvoteButton: UIButton?
     
-    var count: Int = 0
+    
+    var topic: Topic? {
+        didSet {
+            topicLabel?.text = topic?.topicName
+            
+            if let count: Int = topic?.count {
+                countLabel?.text = "\(count)"
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,12 +33,15 @@ class TopicTableViewCell: UITableViewCell {
     
     @IBAction func voteButtonTapped(sender: UIButton) {
         if sender == upvoteButton {
-            count += 1
+            topic?.count += 1
         } else if sender == downvoteButton {
-            count -= 1
+            topic?.count -= 1
         }
         
-        countLabel?.text = "\(count)"
+        if let count: Int = topic?.count {
+            countLabel?.text = "\(count)"
+        }
+        
     }
     
 }

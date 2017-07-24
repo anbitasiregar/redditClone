@@ -11,22 +11,33 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var topicsTableView: UITableView?
+    
+    var topicsList: [Topic] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         topicsTableView?.register(UINib(nibName: "TopicTableViewCell", bundle: nil), forCellReuseIdentifier: "TopicTableViewCell")
+        
+        // For testing purposes only
+        for topicNumber in 1...20 {
+            let topic: Topic = Topic(topicName: "Topic \(topicNumber)", count: 0)
+            topicsList.append(topic)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return topicsList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TopicTableViewCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TopicTableViewCell") as? TopicTableViewCell else {
             return UITableViewCell()
         }
         
+        let cellTopic: Topic = topicsList[indexPath.row]
+
+        cell.topic = cellTopic
         return cell
     }
 }
