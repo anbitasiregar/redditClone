@@ -16,6 +16,8 @@
 		8133B7611F2645F800821FDC /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133B75F1F2645F800821FDC /* TopicTableViewCell.swift */; };
 		8133B7621F2645F800821FDC /* TopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8133B7601F2645F800821FDC /* TopicTableViewCell.xib */; };
 		8133B7651F264E2F00821FDC /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133B7641F264E2F00821FDC /* Topic.swift */; };
+		8133B7691F2656E600821FDC /* SubmitTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133B7671F2656E600821FDC /* SubmitTopicTableViewCell.swift */; };
+		8133B76A1F2656E600821FDC /* SubmitTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8133B7681F2656E600821FDC /* SubmitTopicTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		8133B75F1F2645F800821FDC /* TopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopicTableViewCell.swift; path = UITableViewCell/TopicTableViewCell.swift; sourceTree = "<group>"; };
 		8133B7601F2645F800821FDC /* TopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TopicTableViewCell.xib; path = UITableViewCell/TopicTableViewCell.xib; sourceTree = "<group>"; };
 		8133B7641F264E2F00821FDC /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = Models/Topic.swift; sourceTree = "<group>"; };
+		8133B7671F2656E600821FDC /* SubmitTopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubmitTopicTableViewCell.swift; path = UITableViewCell/SubmitTopicTableViewCell.swift; sourceTree = "<group>"; };
+		8133B7681F2656E600821FDC /* SubmitTopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubmitTopicTableViewCell.xib; path = UITableViewCell/SubmitTopicTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			children = (
 				8133B75F1F2645F800821FDC /* TopicTableViewCell.swift */,
 				8133B7601F2645F800821FDC /* TopicTableViewCell.xib */,
+				8133B7671F2656E600821FDC /* SubmitTopicTableViewCell.swift */,
+				8133B7681F2656E600821FDC /* SubmitTopicTableViewCell.xib */,
 			);
 			name = UITableViewCell;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 				8133B74A1F26434D00821FDC /* LaunchScreen.storyboard in Resources */,
 				8133B7621F2645F800821FDC /* TopicTableViewCell.xib in Resources */,
 				8133B7471F26434D00821FDC /* Assets.xcassets in Resources */,
+				8133B76A1F2656E600821FDC /* SubmitTopicTableViewCell.xib in Resources */,
 				8133B7451F26434D00821FDC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8133B7421F26434D00821FDC /* ViewController.swift in Sources */,
+				8133B7691F2656E600821FDC /* SubmitTopicTableViewCell.swift in Sources */,
 				8133B7651F264E2F00821FDC /* Topic.swift in Sources */,
 				8133B7611F2645F800821FDC /* TopicTableViewCell.swift in Sources */,
 				8133B7401F26434D00821FDC /* AppDelegate.swift in Sources */,
