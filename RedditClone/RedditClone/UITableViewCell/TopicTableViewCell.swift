@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TopicTableViewCellDelegate {
+    func refreshTableView()
+}
+
 class TopicTableViewCell: UITableViewCell {
     
     @IBOutlet weak var topicLabel: UILabel?
@@ -15,6 +19,7 @@ class TopicTableViewCell: UITableViewCell {
     @IBOutlet weak var upvoteButton: UIButton?
     @IBOutlet weak var downvoteButton: UIButton?
     
+    var delegate: TopicTableViewCellDelegate?
     
     var topic: Topic? {
         didSet {
@@ -42,6 +47,7 @@ class TopicTableViewCell: UITableViewCell {
             countLabel?.text = "\(count)"
         }
         
+        delegate?.refreshTableView()    // refresh to sort tableView by number of votes
     }
     
 }

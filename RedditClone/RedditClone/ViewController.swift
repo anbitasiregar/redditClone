@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TopicTableViewCellDelegate {
     
     @IBOutlet weak var topicsTableView: UITableView?
     
@@ -38,7 +38,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cellTopic: Topic = topicsList[indexPath.row]
 
         cell.topic = cellTopic
+        cell.delegate = self
         return cell
+    }
+    
+    // TopicTableViewCellDelegate
+    func refreshTableView() {
+        
+        // Sort in descending order
+        topicsList.sort { (topic1, topic2) -> Bool in
+            return topic1.count > topic2.count
+        }
+        topicsTableView?.reloadData()
     }
 }
 
