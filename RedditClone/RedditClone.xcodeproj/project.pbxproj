@@ -15,6 +15,7 @@
 		8133B7551F26434E00821FDC /* RedditCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133B7541F26434E00821FDC /* RedditCloneTests.swift */; };
 		8133B7611F2645F800821FDC /* TopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133B75F1F2645F800821FDC /* TopicTableViewCell.swift */; };
 		8133B7621F2645F800821FDC /* TopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8133B7601F2645F800821FDC /* TopicTableViewCell.xib */; };
+		8133B7651F264E2F00821FDC /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133B7641F264E2F00821FDC /* Topic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		8133B7561F26434E00821FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8133B75F1F2645F800821FDC /* TopicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopicTableViewCell.swift; path = UITableViewCell/TopicTableViewCell.swift; sourceTree = "<group>"; };
 		8133B7601F2645F800821FDC /* TopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TopicTableViewCell.xib; path = UITableViewCell/TopicTableViewCell.xib; sourceTree = "<group>"; };
+		8133B7641F264E2F00821FDC /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = Models/Topic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				8133B7481F26434D00821FDC /* LaunchScreen.storyboard */,
 				8133B74B1F26434D00821FDC /* Info.plist */,
 				8133B7631F2645FE00821FDC /* UITableViewCell */,
+				8133B7661F264E3400821FDC /* Models */,
 			);
 			path = RedditClone;
 			sourceTree = "<group>";
@@ -108,6 +111,14 @@
 				8133B7601F2645F800821FDC /* TopicTableViewCell.xib */,
 			);
 			name = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		8133B7661F264E3400821FDC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8133B7641F264E2F00821FDC /* Topic.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8133B7421F26434D00821FDC /* ViewController.swift in Sources */,
+				8133B7651F264E2F00821FDC /* Topic.swift in Sources */,
 				8133B7611F2645F800821FDC /* TopicTableViewCell.swift in Sources */,
 				8133B7401F26434D00821FDC /* AppDelegate.swift in Sources */,
 			);
