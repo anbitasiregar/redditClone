@@ -18,6 +18,7 @@ class SubmitTopicTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var submitButton: UIButton?
     
     var delegate: SubmitTopicTableViewCellDelegate?
+    let maxLength: Int = 255
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +28,14 @@ class SubmitTopicTableViewCell: UITableViewCell, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addNewTopic()
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else {
+            return true
+        }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= maxLength   // To ensure the user cannot add a topic name > 255 characters long
     }
     
     @IBAction func submitButtonTapped(sender: UIButton) {

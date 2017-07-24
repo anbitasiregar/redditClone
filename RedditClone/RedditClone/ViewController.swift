@@ -13,12 +13,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var topicsTableView: UITableView?
     
     var topicsList: [Topic] = []
+    
+    let topicTableViewCellIdentifier: String = "TopicTableViewCell"
+    let submitTopicTableViewCellIdentifier: String = "SubmitTopicTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        topicsTableView?.register(UINib(nibName: "TopicTableViewCell", bundle: nil), forCellReuseIdentifier: "TopicTableViewCell")
-        topicsTableView?.register(UINib(nibName: "SubmitTopicTableViewCell", bundle: nil), forCellReuseIdentifier: "SubmitTopicTableViewCell")
+        topicsTableView?.register(UINib(nibName: topicTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: topicTableViewCellIdentifier)
+        topicsTableView?.register(UINib(nibName: submitTopicTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: submitTopicTableViewCellIdentifier)
+        topicsTableView?.rowHeight = UITableViewAutomaticDimension
+        topicsTableView?.estimatedRowHeight = 44
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubmitTopicTableViewCell") as? SubmitTopicTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: submitTopicTableViewCellIdentifier) as? SubmitTopicTableViewCell else {
                 return UITableViewCell()
             }
             
@@ -36,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
         }
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TopicTableViewCell") as? TopicTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: topicTableViewCellIdentifier) as? TopicTableViewCell else {
             return UITableViewCell()
         }
         
