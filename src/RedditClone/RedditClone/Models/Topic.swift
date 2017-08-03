@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Topic {
+struct Topic {
     var topicName: String
     var count: Int
     

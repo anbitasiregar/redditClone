@@ -53,7 +53,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // TopicTableViewCellDelegate
-    func refreshTableView() {
+    func updateTopic(topic: Topic) {
+        let newTopic: Topic = Topic(topicName: topic.topicName, count: topic.count)
+        
+        let index: Int? = topicsList.index { (topic1) -> Bool in
+            topic1.topicName == topic.topicName
+        }
+        
+        if let index = index {
+            topicsList.remove(at: index)
+        }
+        topicsList.append(newTopic)
         
         // Sort in descending order
         topicsList.sort { (topic1, topic2) -> Bool in

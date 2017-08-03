@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TopicTableViewCellDelegate {
-    func refreshTableView()
+    func updateTopic(topic: Topic)
 }
 
 class TopicTableViewCell: UITableViewCell {
@@ -47,7 +47,9 @@ class TopicTableViewCell: UITableViewCell {
             countLabel?.text = "\(count)"
         }
         
-        delegate?.refreshTableView()    // refresh to sort tableView by number of votes
+        if let topic = topic {
+            delegate?.updateTopic(topic: topic)    // refresh to sort tableView by number of votes
+        }
     }
     
 }
